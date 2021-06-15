@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | CRUD-ExpressMongoDB</title>
+    <link rel="shortcut icon" href="/img/Soccer.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/semantic.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="site">
+        <div class="ui massive menu">
+            <div class="ui container">
+                <div class="item"><a href="/"><i class="home icon"></i>Inicio</a></div>
+                <div class="item">About</div>
+                <div class="item">Contact</div>
+                <div class="item">Blog</div>
+            </div>
+        </div>  
+        <!-- <br> -->
+   
+        <div class="ui container">
+            <!-- <h1>Hola</h1> -->
+              <div class="ui segment red">
+                <h4 class="ui center aligned header"><i class="hand point right outline icon"></i>!Bienvenido!</h4>
+              </div>
+            
+            <form id="form" action="/add" class="ui form" method="POST">
+                <div class="three fields">
+                    <div class="field">
+                        <label for="label" class="ui header green"><i class="flag icon"></i>INGRESE EL NOMBRE DEL PAIS</label>
+                        <input type="text" name="name" placeholder="Nombre del Pais" value=""  id="name">
+                    </div>
+                    <div class="field">
+                        <label for="label" class="ui header green"><i class="users icon"></i>INGRESE EL NOMBRE DE LOS JUEGADORES</label>
+                        <input type="text" name="players" placeholder="Nombre de los Jugadores" value="" id="players">
+                    </div>
+                    <div class="field">
+                        <label for="label" class="ui header green"><i class="user icon"></i>INGRESE EL NOMBRE DEL ENTRENADOR</label>
+                        <input type="text" name="coach" placeholder="Nombre del Entrenador" value="" id="coach">
+                    </div>
+                </div>
+                <!-- BOTON PARA AGREGAR DATOS A LA TABLA Y DB"> -->
+                    <div class="field fluid">
+                        <button type="submit" class="ui button fluid orange"><i class="save icon"></i>Guardar</button>
+                    </div>
+                <!-- **************************** -->
+            </form>
+           
+            <br>
+
+            <table class="ui blue table">
+
+                <!-- Barra de Busqueda -->
+                
+                <!-- <div class="ui input">
+                    <input type="text" placeholder="Buscar...">
+                  </div> -->
+
+                <thead>
+                    <th>País</th>
+                    <th>Jugadores</th>
+                    <th>Entrenador</th>
+                    <th>Editar</th>
+                    <th>Borrar</th>
+                </thead>
+                <tbody>
+
+                    <% pais.forEach((pais)=>{ %>
+                        <tr>
+                            <td><%- pais.name %></td>
+                            <td><%- pais.players %></td>
+                            <td><%- pais.coach %></td>
+                            <td><a class="ui blue button" href="/edit/<%= pais._id %>"><i class="edit outline icon"></i></a></td>
+                            <td><a class="ui red button" href="/delete/<%= pais._id %>"><i class="trash alternate  icon"></i></a></td>
+                        </tr>
+
+                        <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- <script src="/js/semantic.min.js"></script> -->
+</body>
+</html>

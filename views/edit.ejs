@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar | CRUD-ExpressMongoDB</title>
+    <link rel="shortcut icon" href="/img/Soccer.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/semantic.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="site">
+        <div class="ui massive menu">
+            <div class="ui container">
+                <div class="item"><a href="/"><i class="home icon"></i>Inicio</a></div>
+                <div class="item">About</div>
+                <div class="item">Contact</div>
+                <div class="item">Blog</div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="ui container">
+            <form id="form" action="/edit/<%- pais._id %>" class="ui form" method="POST">
+                <div class="three fields">
+                    <div class="field">
+                        <label for="label" class="ui header green"><i class="flag icon"></i>INGRESE EL NOMBRE DEL PAIS</label>
+                        <input type="text" name="name" placeholder="Nombre del Pais" value="<%- pais.name %>"  id="name">
+                    </div>
+                    <div class="field">
+                        <label for="label" class="ui header green"><i class="users icon"></i>INGRESE EL NOMBRE DE LOS JUGADORES</label>
+                        <input type="text" name="players" placeholder="Nombre de los Jugadores" value="<%- pais.players %>" id="players">
+                    </div>
+                    <div class="field">
+                        <label for="label" class="ui header green"><i class="user icon"></i>INGRESE EL NOMBRE DEL ENTRENADOR</label>
+                        <input type="text" name="coach" placeholder="Nombre del Entrenador" value="<%- pais.coach %>" id="coach">
+                    </div>
+                </div>
+
+                <!-- BOTONES PARA ACTUALIZAR Y CANCELAR -->
+                    <div class="field fluid">
+                        <button type="submit" class="ui button fluid green"><i class="recycle icon"></i>Actualizar</button> 
+                    </div>
+                    
+                    <div class="field fluid">
+                        <button class="ui button fluid red"><a href="/"></a><i class="arrow alternate circle left icon"></i>Canclear</button>   
+                        
+                    </div>
+                
+                     <!-- Nueva Opcion -->
+        
+                    <div class="ui buttons ">
+                        <button class="ui button fluid red"><a href="/"></a><i class="arrow alternate circle left icon"></i>Canclear</button>
+                        <div class="or"></div>
+                        <button type="submit" class="ui button fluid blue"><i class="recycle icon"></i>Actualizar</button>
+                    </div>
+            
+                <!-- ******************************** --> 
+            </form>
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+    <!-- <script src="/js/semantic.min.js"></script> -->
+</body>
+</html>
